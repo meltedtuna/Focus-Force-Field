@@ -1,0 +1,33 @@
+/*
+  The Selector: Targets any interactive element when it is in focus.
+  The !important: Overrides any other styles defined by the website.
+*/
+
+*:focus:not(body),
+input:focus,
+button:focus,
+a:focus,
+select:focus,
+textarea:focus,
+[tabindex]:focus {
+    /* The key override! Use a strong, contrasting border.
+      We use 'outline' instead of 'border' because 'outline' does not
+      affect the layout/size of the element.
+    */
+    outline: 5px solid yellow !important; 
+    
+    /* Ensure the outline is always visible by stacking it */
+    outline-offset: 1px !important; 
+    
+    /* Optional: Add a subtle drop shadow for even more visibility */
+    box-shadow: 0 0 0 3px black !important;
+    
+    /* Optional: Add an animation for a quick visual alert */
+    transition: all 0.1s ease-in-out !important;
+}
+
+/* Optional: Add a subtle fallback for elements that use :focus-visible */
+*:focus-visible {
+    outline: 5px solid limegreen !important;
+    outline-offset: 1px !important;
+}
